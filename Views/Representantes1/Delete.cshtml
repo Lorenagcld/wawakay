@@ -1,0 +1,65 @@
+﻿@model loginwawaky.DataModel.Representante
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/deletealumno.css" rel="stylesheet">
+
+<div class="delete-container">
+    <h2>Eliminar Representante</h2>
+    <h3>¿Está seguro de que desea eliminar esto?</h3>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.idRepresentante)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.idRepresentante)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombres)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nombres)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cedula)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Cedula)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Telefono)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.estadoR)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.estadoR)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions">
+                <input type="submit" value="Eliminar" class="btn-submit" />
+                @Html.ActionLink("Volver a la Lista", "Index", null, new { @class = "btn-link" })
+            </div>
+        }
+    </div>
+</div>

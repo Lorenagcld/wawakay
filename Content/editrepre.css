@@ -1,0 +1,45 @@
+﻿/* archivo: editalumno.css */
+
+.form-container {
+    max-width: 800px;
+    margin: 20px auto; /* Centra el formulario */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-horizontal {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente línea */
+}
+
+.form-group {
+    width: 50%; /* Dos columnas */
+    padding: 0 15px; /* Espaciado entre columnas */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+.control-label {
+    font-weight: bold;
+}
+
+.btn-submit {
+    background-color: #009879;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-submit:hover {
+        background-color: #007f68;
+    }
+
+.text-danger {
+    font-size: 0.9em;
+    color: #e3342f; /* Color para mensajes de error */
+}

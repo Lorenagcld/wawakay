@@ -1,0 +1,47 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Docente>
+
+@{
+    ViewBag.Title = "Docentes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/indexdocente.css" rel="stylesheet">
+
+<div class="table-container">
+
+    <p>
+        <a class="create-button" href="@Url.Action("Create")">Create New</a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().idDocente)</th>
+                <th>@Html.DisplayNameFor(model => model.First().NombresDocente)</th>
+                <th>@Html.DisplayNameFor(model => model.First().CedulaDocente)</th>
+                <th>@Html.DisplayNameFor(model => model.First().TelefonoDocente)</th>
+                <th>@Html.DisplayNameFor(model => model.First().EmailDocente)</th>
+                <th>@Html.DisplayNameFor(model => model.First().estadoD)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.idDocente)</td>
+                    <td>@Html.DisplayFor(modelItem => item.NombresDocente)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CedulaDocente)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TelefonoDocente)</td>
+                    <td>@Html.DisplayFor(modelItem => item.EmailDocente)</td>
+                    <td>@Html.DisplayFor(modelItem => item.estadoD)</td>
+                    <td class="action-links">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idDocente }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.idDocente }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idDocente })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

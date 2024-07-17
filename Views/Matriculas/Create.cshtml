@@ -1,0 +1,64 @@
+﻿@model loginwawaky.DataModel.Matriculas
+
+@{
+    ViewBag.Title = "Crear Matrícula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/creatematri.css" rel="stylesheet">
+
+<div class="form-container">
+    <h2>Crear Matrícula</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.idAlumno, "Alumno", new { @class = "control-label" })
+                <div>
+                    @Html.DropDownList("idAlumno", null, htmlAttributes: new { @class = "form-control", id = "idAlumno" })
+                    @Html.ValidationMessageFor(model => model.idAlumno, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.idCurso, "Curso", new { @class = "control-label" })
+                <div>
+                    @Html.DropDownList("idCurso", null, htmlAttributes: new { @class = "form-control", id = "idCurso" })
+                    @Html.ValidationMessageFor(model => model.idCurso, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="width: 100%;">
+                <label class="control-label">Materias</label>
+                <div>
+                    <ul>
+                        @foreach (var materia in ViewBag.Materias)
+                        {
+                            <li>@materia.NombreMateria</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-group" style="width: 100%; padding-top: 20px;">
+                <div>
+                    <input type="submit" value="Guardar" class="btn-submit" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn btn-link" })
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

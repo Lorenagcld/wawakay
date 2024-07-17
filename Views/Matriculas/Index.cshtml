@@ -1,0 +1,38 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Matriculas>
+
+@{
+    ViewBag.Title = "Lista de Matrículas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/indexmatri.css" rel="stylesheet">
+
+<p>
+    <a href="@Url.Action("Create")" class="create-button">Crear Nueva Matrícula</a>
+</p>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().Alumnos.NombresAlumno)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Cursos.Paralelo)</th>
+                <th>@Html.DisplayNameFor(model => model.First().fechaRegistroMt)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var matricula in Model)
+            {
+                <tr>
+                    <td>@matricula.Alumnos.NombresAlumno</td>
+                    <td>@matricula.Cursos.Paralelo</td>
+                    <td>@matricula.fechaRegistroMt.Value.ToString("dd/MM/yyyy")</td>
+                    <td class="action-links">
+                        @Html.ActionLink("Detalles", "Detail", new { id = matricula.idMatricula }) 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

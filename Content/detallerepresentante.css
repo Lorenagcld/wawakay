@@ -1,0 +1,51 @@
+﻿.details-container {
+    max-width: 800px;
+    margin: 20px auto; /* Centra el contenedor */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+h4 {
+    color: #555;
+}
+
+.dl-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Distribuye los elementos de manera uniforme */
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+    flex-basis: 40%; /* Ancho de la etiqueta */
+}
+
+dd {
+    margin: 0;
+    flex-basis: 55%; /* Ancho del valor */
+}
+
+.btn-link {
+    color: #007bff;
+    text-decoration: none;
+    margin: 10px 5px;
+}
+
+    .btn-link:hover {
+        text-decoration: underline;
+    }
+
+hr {
+    margin: 20px 0; /* Espaciado de la línea horizontal */
+}

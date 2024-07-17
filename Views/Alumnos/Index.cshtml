@@ -1,0 +1,78 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Alumnos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/IndexAlumnos.css" rel="stylesheet">
+
+<div class="table-container">
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class = "create-button" })
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.idAlumnos)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CédulaAlumno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NombresAlumno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FechaNacimiento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.estadoA)
+                </th>
+                <th>
+                    @Html.DisplayName("Representante")
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Representante.Nombres)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idAlumnos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CédulaAlumno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombresAlumno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Direccion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estadoA)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Representante.Nombres)
+                    </td>
+                    <td class="action-links">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idAlumnos }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.idAlumnos }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idAlumnos })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

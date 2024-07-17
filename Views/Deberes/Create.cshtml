@@ -1,0 +1,61 @@
+﻿@model loginwawaky.DataModel.AlumnoNotasViewModel
+
+@{
+    ViewBag.Title = "Crear Notas";
+}
+
+<h2>Crear Notas</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Alumno</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.idMatricula, "Alumno", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.idMatricula, (SelectList)ViewBag.Matriculas, "Seleccione un Alumno", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.idMatricula, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <h4>Notas de Materias</h4>
+        @for (int i = 0; i < Model.MateriasNotas.Count; i++)
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.MateriasNotas[i].NombreMateria, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DisplayFor(m => m.MateriasNotas[i].NombreMateria, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MateriasNotas[i].Parcial1, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MateriasNotas[i].Parcial1, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MateriasNotas[i].Parcial2, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MateriasNotas[i].Parcial2, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.MateriasNotas[i].Parcial3, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.MateriasNotas[i].Parcial3, new { @class = "form-control" })
+                </div>
+            </div>
+        }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

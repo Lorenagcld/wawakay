@@ -1,0 +1,47 @@
+﻿@model loginwawaky.DataModel.Matriculas
+
+@{
+    ViewBag.Title = "Detalle de Matrícula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/detallematricula.css" rel="stylesheet">
+
+
+<div class="details-container">
+    <h2>Detalle de Matrícula</h2>
+    <hr />
+    <div>
+        <h4>Información de la Matrícula</h4>
+        <dl class="dl-horizontal">
+            <dt>Nombres del Alumno</dt>
+            <dd>@Html.DisplayFor(model => model.Alumnos.NombresAlumno)</dd>
+            <dt>Cédula del Alumno</dt>
+            <dd>@Html.DisplayFor(model => model.Alumnos.CédulaAlumno)</dd>
+            <dt>Dirección</dt>
+            <dd>@Html.DisplayFor(model => model.Alumnos.Direccion)</dd>
+            <dt>Curso</dt>
+            <dd>@Html.DisplayFor(model => model.Cursos.Paralelo)</dd>
+            <dt>Fecha de Registro</dt>
+            <dd>@Html.DisplayFor(model => model.fechaRegistroMt)</dd>
+        </dl>
+    </div>
+
+    <div>
+        <h4>Materias</h4>
+        <ul>
+            @foreach (var materia in ViewBag.Materias)
+            {
+                <li class="materia-item">@materia.NombreMateria</li>
+            }
+        </ul>
+    </div>
+
+    <div class="text-center">
+        @Html.ActionLink("Generar PDF", "GenerarPDF", new { id = Model.idMatricula }, new { @class = "btn btn-primary" })
+    </div>
+
+    <div class="text-center">
+        @Html.ActionLink("Volver a la Lista", "Index", null, new { @class = "btn-link" })
+    </div>
+</div>

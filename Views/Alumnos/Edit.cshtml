@@ -1,0 +1,104 @@
+﻿@model loginwawaky.DataModel.Alumnos
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/editalumno.css" rel="stylesheet">
+
+<div class="form-container">
+    <h2>Editar Alumno</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.HiddenFor(model => model.idAlumnos)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.idAlumnos, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.idAlumnos, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    @Html.ValidationMessageFor(model => model.idAlumnos, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.CédulaAlumno, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.CédulaAlumno, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CédulaAlumno, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NombresAlumno, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.NombresAlumno, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.NombresAlumno, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.FechaNacimiento, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.TextBoxFor(model => model.FechaNacimiento, new { @class = "form-control", @id = "datepicker" })
+                    @Html.ValidationMessageFor(model => model.FechaNacimiento, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Direccion, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.EditorFor(model => model.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Direccion, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.estadoA, htmlAttributes: new { @class = "control-label" })
+                <div>
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.estadoA)
+                        @Html.ValidationMessageFor(model => model.estadoA, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.idRepresentante, "Representante", htmlAttributes: new { @class = "control-label" })
+                <div>
+                    @Html.DropDownList("idRepresentante", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.idRepresentante, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group" style="width: 100%; padding-top: 20px;">
+                <div>
+                    <input type="submit" value="Save" class="btn-submit" />
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div>
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-link" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $('#datepicker').datepicker({
+                format: 'yyyy-mm-dd', // Formato para la fecha
+                autoclose: true
+            });
+        });
+    </script>
+}

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Representante>
+
+@{
+    ViewBag.Title = "Representantes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/indexrepre.css" rel="stylesheet">
+
+<div class="table-container">
+
+    <p>
+        <a class="create-button" href="@Url.Action("Create")">Create New</a>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.First().idRepresentante)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Nombres)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Cedula)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Telefono)</th>
+                <th>@Html.DisplayNameFor(model => model.First().Email)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.idRepresentante)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Nombres)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Cedula)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td class="action-links">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idRepresentante }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.idRepresentante }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idRepresentante })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

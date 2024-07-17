@@ -1,0 +1,53 @@
+﻿body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f1854c; /* Color de fondo */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#logo {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px; /* Ajuste de margen */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.formcontent {
+    border-radius: 10px;
+    background: #ffffff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+    .formcontent label {
+        text-align: left;
+    }
+
+    .formcontent h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+        color: #0fa2ac; /* Color del título */
+    }
+
+.texto-izquierda {
+    text-align: left;
+}
+
+.btn.bg-primary.btn-dark {
+    background-color: #0fa2ac !important; /* Color del botón */
+}

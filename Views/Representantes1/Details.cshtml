@@ -1,0 +1,38 @@
+﻿@model loginwawaky.DataModel.Representante
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/detallerepresentante.css" rel="stylesheet">
+
+
+<div class="details-container">
+    <h2>Detalle Representante</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.idRepresentante)</dt>
+        <dd>@Html.DisplayFor(model => model.idRepresentante)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Nombres)</dt>
+        <dd>@Html.DisplayFor(model => model.Nombres)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Cedula)</dt>
+        <dd>@Html.DisplayFor(model => model.Cedula)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Telefono)</dt>
+        <dd>@Html.DisplayFor(model => model.Telefono)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.estadoR)</dt>
+        <dd>@Html.DisplayFor(model => model.estadoR)</dd>
+    </dl>
+
+    <p class="text-center">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idRepresentante }, new { @class = "btn-link" }) |
+        @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn-link" })
+    </p>
+</div>

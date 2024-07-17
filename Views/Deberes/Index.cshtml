@@ -1,0 +1,40 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Deberes>
+
+@{
+    ViewBag.Title = "Lista de Deberes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de Deberes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Alumno</th>
+            <th>Nombre del Deber</th>
+            <th>Parcial</th>
+            <th>Calificación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var deber in Model)
+        {
+            <tr>
+                <td>@deber.Matriculas.Alumnos.NombresAlumno</td>
+                <td>@deber.NombreDeber</td>
+                <td>@deber.Parcial</td>
+                <td>@deber.Calificacion</td>
+                <td>
+                    @Html.ActionLink("Ver Detalle", "Detalle", "Deberes", new { idMatricula = deber.idMatricula }, null)
+                    @Html.ActionLink("Detalle", "Detalle", new { id = deber.idDeber }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = deber.idDeber })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Registrar Nuevo Deber", "Create")
+</div>

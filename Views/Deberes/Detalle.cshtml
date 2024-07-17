@@ -1,0 +1,53 @@
+﻿@model loginwawaky.DataModel.AlumnoNotasViewModel
+
+@{
+    ViewBag.Title = "Detalle del Alumno";
+}
+
+<h2>Detalle del Alumno</h2>
+
+<div>
+    <h4>Alumno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.Alumno.Alumnos.NombresAlumno)</dt>
+        <dd>@Html.DisplayFor(model => model.Alumno.Alumnos.NombresAlumno)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Alumno.Alumnos.Cedula)</dt>
+        <dd>@Html.DisplayFor(model => model.Alumno.Alumnos.Cedula)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Alumno.Alumnos.Direccion)</dt>
+        <dd>@Html.DisplayFor(model => model.Alumno.Alumnos.Direccion)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Alumno.FechaDeMatricula)</dt>
+        <dd>@Html.DisplayFor(model => model.Alumno.FechaDeMatricula)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Alumno.Cursos.Paralelo)</dt>
+        <dd>@Html.DisplayFor(model => model.Alumno.Cursos.Paralelo)</dd>
+        <dt>@Html.DisplayNameFor(model => model.Alumno.Cursos.Docente.NombreDocente)</dt>
+        <dd>@Html.DisplayFor(model => model.Alumno.Cursos.Docente.NombreDocente)</dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Notas de Materias</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Materia</th>
+                <th>Parcial 1</th>
+                <th>Parcial 2</th>
+                <th>Parcial 3</th>
+                <th>Promedio Final</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.Deberes)
+            {
+                <tr>
+                    <td>@item.NombreMateria</td>
+                    <td>@item.Parcial1</td>
+                    <td>@item.Parcial2</td>
+                    <td>@item.Parcial3</td>
+                    <td>@item.PromedioFinal</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

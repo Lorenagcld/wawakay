@@ -1,0 +1,41 @@
+﻿@model loginwawaky.DataModel.Alumnos
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/detallealumno.css" rel="stylesheet">
+
+
+<div class="details-container">
+    <h2>Detalle Alumno</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.idAlumnos)</dt>
+        <dd>@Html.DisplayFor(model => model.idAlumnos)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.CédulaAlumno)</dt>
+        <dd>@Html.DisplayFor(model => model.CédulaAlumno)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.NombresAlumno)</dt>
+        <dd>@Html.DisplayFor(model => model.NombresAlumno)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.FechaNacimiento)</dt>
+        <dd>@Html.DisplayFor(model => model.FechaNacimiento)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Direccion)</dt>
+        <dd>@Html.DisplayFor(model => model.Direccion)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.estadoA)</dt>
+        <dd>@Html.DisplayFor(model => model.estadoA)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Representante.Nombres)</dt>
+        <dd>@Html.DisplayFor(model => model.Representante.Nombres)</dd>
+    </dl>
+
+    <p class="text-center">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idAlumnos }, new { @class = "btn-link" }) |
+        @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn-link" })
+    </p>
+</div>

@@ -1,0 +1,74 @@
+﻿@model loginwawaky.DataModel.Alumnos
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/deletealumno.css" rel="stylesheet">
+
+<div class="delete-container">
+    <h2>Eliminar Alumno</h2>
+    <h3>¿Estás seguro de eliminar este registro?</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idAlumnos)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.idAlumnos)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CédulaAlumno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CédulaAlumno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombresAlumno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombresAlumno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.estadoA)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.estadoA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Representante.Nombres)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Representante.Nombres)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn-link" })
+        </div>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Registrar Asistencia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/createasis.css" rel="stylesheet">
+
+<div class="form-container">
+    <h2>Registrar Asistencia</h2>
+
+    @using (Html.BeginForm("Create", "Asistencias", FormMethod.Post))
+    {
+        <div class="form-horizontal">
+            <div class="form-group">
+                @Html.Label("Curso", new { @class = "control-label" })
+                @Html.DropDownList("idCurso", new SelectList(ViewBag.Cursos, "idCurso", "Paralelo"), "Seleccionar Curso", new { @class = "form-control", @id = "idCurso" })
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Siguiente</button>
+            </div>
+        </div>
+    }
+</div>

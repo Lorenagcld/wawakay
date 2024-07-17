@@ -1,0 +1,65 @@
+﻿@model loginwawaky.DataModel.Docente
+
+@{
+    ViewBag.Title = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/deletealumno.css" rel="stylesheet">
+
+<div class="delete-container">
+    <h2>Eliminar</h2>
+    <h3>¿Está seguro de que desea eliminar esto?</h3>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.idDocente)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.idDocente)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NombresDocente)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NombresDocente)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CedulaDocente)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CedulaDocente)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TelefonoDocente)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TelefonoDocente)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.EmailDocente)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.EmailDocente)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.estadoD)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.estadoD)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions">
+                <input type="submit" value="Eliminar" class="btn-submit" />
+                @Html.ActionLink("Volver a la Lista", "Index", null, new { @class = "btn-link" })
+            </div>
+        }
+    </div>
+</div>

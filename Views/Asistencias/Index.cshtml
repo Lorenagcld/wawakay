@@ -1,0 +1,52 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Asistencias>
+
+@{
+    ViewBag.Title = "Lista de Asistencias";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/indexasiste.css" rel="stylesheet">
+
+<p>
+    <a href="@Url.Action("Create")" class="create-button">Registrar Nueva Asistencia</a>
+</p>
+
+<div>
+    @using (Html.BeginForm("Index", "Asistencias", FormMethod.Get))
+    {
+        <div class="form-group">
+            @Html.Label("Curso")
+            @Html.DropDownList("cursoId", ViewBag.Cursos as SelectList, "Seleccione un curso", new { @class = "form-control" })
+            <input type="submit" value="Filtrar" class="btn btn-primary" />
+        </div>
+    }
+</div>
+
+@if (Model != null && Model.Any())
+{
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Alumno</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var asistencia in Model)
+                {
+                    <tr>
+                        <td>@asistencia.Alumnos.NombresAlumno</td>
+                        <td>@asistencia.fecha.Value.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>@(asistencia.estado.HasValue ? (asistencia.estado.Value ? "Presente" : "Ausente") : "No Registrado")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <p>No hay asistencias registradas para el curso seleccionado.</p>
+}

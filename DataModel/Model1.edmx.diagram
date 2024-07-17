@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="593c310b58464ecf9b2242c0f595cf04" Name="Diagram1" ZoomLevel="47">
+        <EntityTypeShape EntityType="loginModel.C__MigrationHistory" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Alumnos" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Asistencias" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.AspNetRoles" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.AspNetUserClaims" Width="1.5" PointX="10.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.AspNetUserLogins" Width="1.5" PointX="10.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.AspNetUsers" Width="1.5" PointX="8" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Cursos" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Deberes" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Docente" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Materias" Width="1.5" PointX="9.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Matriculas" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="loginModel.Representante" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="loginModel.FK__Alumnos__idRepre__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.FK__Asistenci__idAlu__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.FK__Matricula__idAlu__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.FK__Cursos__idDocent__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.FK__Matricula__idCur__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.FK__Deberes__idMatri__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="loginModel.AspNetUserRoles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

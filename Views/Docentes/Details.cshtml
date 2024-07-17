@@ -1,0 +1,38 @@
+﻿@model loginwawaky.DataModel.Docente
+
+@{
+    ViewBag.Title = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/detalledocente.css" rel="stylesheet">
+
+
+<div class="details-container">
+    <h2>Detalle Docente</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>@Html.DisplayNameFor(model => model.idDocente)</dt>
+        <dd>@Html.DisplayFor(model => model.idDocente)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.NombresDocente)</dt>
+        <dd>@Html.DisplayFor(model => model.NombresDocente)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.CedulaDocente)</dt>
+        <dd>@Html.DisplayFor(model => model.CedulaDocente)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.TelefonoDocente)</dt>
+        <dd>@Html.DisplayFor(model => model.TelefonoDocente)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.EmailDocente)</dt>
+        <dd>@Html.DisplayFor(model => model.EmailDocente)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.estadoD)</dt>
+        <dd>@Html.DisplayFor(model => model.estadoD)</dd>
+    </dl>
+
+    <p class="text-center">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idDocente }, new { @class = "btn-link" }) |
+        @Html.ActionLink("Volver a la lista", "Index", null, new { @class = "btn-link" })
+    </p>
+</div>

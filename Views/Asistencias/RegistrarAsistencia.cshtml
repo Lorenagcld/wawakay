@@ -1,0 +1,28 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Alumnos>
+
+@{
+    ViewBag.Title = "Registrar Asistencia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/asistencia.css" rel="stylesheet">
+
+
+<div class="asistencia-container">
+    <h2>Registrar Asistencia</h2>
+
+    @using (Html.BeginForm("Guardar", "Asistencias", FormMethod.Post))
+    {
+        foreach (var alumno in Model)
+        {
+            <div class="student-checkbox">
+                @Html.Hidden("asistencias[" + Model.ToList().IndexOf(alumno) + "].idAlumno", alumno.idAlumnos)
+                @Html.CheckBox("asistencias[" + Model.ToList().IndexOf(alumno) + "].estado")
+                <label>
+                    @alumno.NombresAlumno
+                </label>
+            </div>
+        }
+        <button type="submit">Guardar Asistencia</button>
+    }
+</div>

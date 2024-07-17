@@ -1,0 +1,44 @@
+﻿@model IEnumerable<loginwawaky.DataModel.Cursos>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/indexcurso.css" rel="stylesheet">
+
+<p>
+    <a href="@Url.Action("Create")" class="create-button">Create New</a>
+</p>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.idCurso)</th>
+                <th>@Html.DisplayNameFor(model => model.Paralelo)</th>
+                <th>@Html.DisplayNameFor(model => model.fechaInicio)</th>
+                <th>@Html.DisplayNameFor(model => model.fechaFin)</th>
+                <th>@Html.DisplayNameFor(model => model.Docente.NombresDocente)</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.idCurso)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Paralelo)</td>
+                    <td>@Html.DisplayFor(modelItem => item.fechaInicio)</td>
+                    <td>@Html.DisplayFor(modelItem => item.fechaFin)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Docente.NombresDocente)</td>
+                    <td class="action-links">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.idCurso }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.idCurso }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.idCurso })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
